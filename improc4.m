@@ -45,10 +45,10 @@ imgBW = im2bw(grad_norm,level);
 imgGR = bwmorph(imgBW,'thin');
 % laplacian
 mask_laplace = fspecial('laplacian', 0.2);
-level = 0.4 * graythresh(filtered_wiener);
-laplacian_bw = edge(filtered_wiener,'zerocross',level,mask_laplace);
+level = 0.4 * graythresh(wienerFilt);
+laplacian_bw = edge(wienerFilt,'zerocross',level,mask_laplace);
 % Canny Edge Detector
-canny_bw = edge(filtered_wiener,'canny');
+canny_bw = edge(wienerFilt,'canny');
 
 % Show result
 figure;
